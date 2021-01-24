@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="br.com.kaneda.margay.watchbatterynotifier" version="1.0.0">
+    <author email="thiago.cardoso33@gmail.com">Thiago Cardoso</author>
+    <profile name="wearable"/>
+    <service-application appid="br.com.kaneda.margay.watchbatterynotifier" exec="watchbatterynotifier" multiple="false" nodisplay="true" taskmanage="false" type="capp">
+        <label>Watch Battery Notifier</label>
+        <icon>wristwatch.png</icon>
+        <background-category value="background-network"/>
+    </service-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        <privilege>http://tizen.org/privilege/notification</privilege>
+    </privileges>
+</manifest>
