@@ -25,11 +25,15 @@ void battery_changed(device_callback_e type, void *value, void *user_data) {
 	{
 		dlog_print(DLOG_INFO, LOG_TAG, "Battery percentage: %d", battery_percent);
 
-		if(battery_percent <= 20) {
+		if(battery_percent == 20) {
+			dlog_print(DLOG_INFO, LOG_TAG, "Almost Low Battery Event");
+			create_notification("Battery getting low, pay attention.");
+		}
+		if(battery_percent == 15) {
 			dlog_print(DLOG_INFO, LOG_TAG, "Low Battery Event");
 			create_notification("Low Battery!");
 		}
-		if(battery_percent <= 10) {
+		if(battery_percent == 10) {
 			dlog_print(DLOG_INFO, LOG_TAG, "Really Low Battery Event");
 			create_notification("Really Low Battery! Please, charge me.");
 		}

@@ -21,13 +21,13 @@
 						<toolChain id="org.tizen.nativecore.toolchain.sbi.gcc45.app.debug.1760543584" name="Tizen Native Toolchain" superClass="org.tizen.nativecore.toolchain.sbi.gcc45.app.debug">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="org.tizen.nativeide.target.sbi.gnu.platform.base.1838199332" osList="linux,win32" superClass="org.tizen.nativeide.target.sbi.gnu.platform.base"/>
 							<builder autoBuildTarget="all" buildPath="${workspace_loc:/WatchBatteryNotifier}/Debug" enableAutoBuild="true" id="org.tizen.nativecore.target.sbi.gnu.builder.939935847" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="Tizen Application Builder" superClass="org.tizen.nativecore.target.sbi.gnu.builder"/>
-							<tool command="i586-linux-gnueabi-ar" id="org.tizen.nativecore.tool.sbi.gnu.archiver.1147089241" name="Archiver" superClass="org.tizen.nativecore.tool.sbi.gnu.archiver"/>
+							<tool command="arm-linux-gnueabi-ar" id="org.tizen.nativecore.tool.sbi.gnu.archiver.1147089241" name="Archiver" superClass="org.tizen.nativecore.tool.sbi.gnu.archiver"/>
 							<tool command="clang++" id="org.tizen.nativecore.tool.sbi.gnu.cpp.compiler.391633247" name="C++ Compiler" superClass="org.tizen.nativecore.tool.sbi.gnu.cpp.compiler">
 								<option id="gnu.cpp.compiler.option.optimization.level.1865711252" name="Optimization Level" superClass="gnu.cpp.compiler.option.optimization.level" value="gnu.cpp.compiler.optimization.level.none" valueType="enumerated"/>
 								<option defaultValue="gnu.cpp.compiler.debugging.level.max" id="sbi.gnu.cpp.compiler.option.debugging.level.core.338245476" name="Debug level" superClass="sbi.gnu.cpp.compiler.option.debugging.level.core" valueType="enumerated"/>
 								<option defaultValue="false" id="sbi.gnu.cpp.compiler.option.misc.pic.core.1187733659" name="-fPIC option" superClass="sbi.gnu.cpp.compiler.option.misc.pic.core" valueType="boolean"/>
 								<option id="sbi.gnu.cpp.compiler.option.560409558" superClass="sbi.gnu.cpp.compiler.option" valueType="userObjs">
-									<listOptionValue builtIn="false" value="wearable-5.5-emulator.core_llvm40.i386"/>
+									<listOptionValue builtIn="false" value="wearable-5.5-device.core_llvm40.armel"/>
 								</option>
 								<option id="sbi.gnu.cpp.compiler.option.frameworks_inc.core.725520425" superClass="sbi.gnu.cpp.compiler.option.frameworks_inc.core" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
@@ -130,12 +130,12 @@
 									<listOptionValue builtIn="false" value="${RS_COMPILER_MISC}"/>
 									<listOptionValue builtIn="false" value=" -fPIE"/>
 									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-mthumb"/>
 									<listOptionValue builtIn="false" value="--param=ssp-buffer-size=4"/>
-									<listOptionValue builtIn="false" value="-fasynchronous-unwind-tables"/>
-									<listOptionValue builtIn="false" value="-fno-omit-frame-pointer"/>
-									<listOptionValue builtIn="false" value="-msse4.2"/>
-									<listOptionValue builtIn="false" value="-m32"/>
-									<listOptionValue builtIn="false" value="-mfpmath=sse"/>
+									<listOptionValue builtIn="false" value="-mlittle-endian"/>
+									<listOptionValue builtIn="false" value="-mfloat-abi=softfp"/>
+									<listOptionValue builtIn="false" value="-Wl,--hash-style=gnu"/>
+									<listOptionValue builtIn="false" value="-Wp,-D__SOFTFP"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.include.paths.906155280" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
@@ -155,7 +155,7 @@
 								<option defaultValue="gnu.c.debugging.level.max" id="sbi.gnu.c.compiler.option.debugging.level.core.1645192730" name="Debug level" superClass="sbi.gnu.c.compiler.option.debugging.level.core" valueType="enumerated"/>
 								<option defaultValue="false" id="sbi.gnu.c.compiler.option.misc.pic.core.864157665" name="-fPIC option" superClass="sbi.gnu.c.compiler.option.misc.pic.core" valueType="boolean"/>
 								<option id="sbi.gnu.c.compiler.option.669799393" superClass="sbi.gnu.c.compiler.option" valueType="userObjs">
-									<listOptionValue builtIn="false" value="wearable-5.5-emulator.core_llvm40.i386"/>
+									<listOptionValue builtIn="false" value="wearable-5.5-device.core_llvm40.armel"/>
 								</option>
 								<option id="sbi.gnu.c.compiler.option.frameworks_inc.core.1668073769" superClass="sbi.gnu.c.compiler.option.frameworks_inc.core" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${SBI_SYSROOT}/usr/include/libxml2&quot;"/>
@@ -258,12 +258,12 @@
 									<listOptionValue builtIn="false" value="${RS_COMPILER_MISC}"/>
 									<listOptionValue builtIn="false" value=" -fPIE"/>
 									<listOptionValue builtIn="false" value="--sysroot=&quot;${SBI_SYSROOT}&quot;"/>
+									<listOptionValue builtIn="false" value="-mthumb"/>
 									<listOptionValue builtIn="false" value="--param=ssp-buffer-size=4"/>
-									<listOptionValue builtIn="false" value="-fasynchronous-unwind-tables"/>
-									<listOptionValue builtIn="false" value="-fno-omit-frame-pointer"/>
-									<listOptionValue builtIn="false" value="-msse4.2"/>
-									<listOptionValue builtIn="false" value="-m32"/>
-									<listOptionValue builtIn="false" value="-mfpmath=sse"/>
+									<listOptionValue builtIn="false" value="-mlittle-endian"/>
+									<listOptionValue builtIn="false" value="-mfloat-abi=softfp"/>
+									<listOptionValue builtIn="false" value="-Wl,--hash-style=gnu"/>
+									<listOptionValue builtIn="false" value="-Wp,-D__SOFTFP"/>
 								</option>
 								<option id="gnu.c.compiler.option.include.paths.1970464251" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/inc}&quot;"/>
@@ -952,6 +952,7 @@
 					</sourceEntries>
 				</configuration>
 			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 		<cconfiguration id="org.tizen.nativecore.config.sbi.gcc45.app.release.999342434">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="org.tizen.nativecore.config.sbi.gcc45.app.release.999342434" moduleId="org.eclipse.cdt.core.settings" name="Release">
@@ -1262,6 +1263,7 @@
 					</sourceEntries>
 				</configuration>
 			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 	</storageModule>
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
