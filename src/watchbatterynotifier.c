@@ -5,8 +5,11 @@
 #include <device/callback.h>
 #include <notification.h>
 
-void
-create_notification(char* text) {
+bool almost_low = false;
+bool low = false;
+bool really_low = false;
+
+void create_notification(char* text) {
 	notification_h notification = NULL;
 	notification = notification_create(NOTIFICATION_TYPE_NOTI);
 	if(notification != NULL) {
@@ -25,17 +28,22 @@ void battery_changed(device_callback_e type, void *value, void *user_data) {
 	{
 		dlog_print(DLOG_INFO, LOG_TAG, "Battery percentage: %d", battery_percent);
 
-		if(battery_percent == 20) {
+		if(battery_percent <= 20 && !almost_low) {
+			almost_low = true;
 			dlog_print(DLOG_INFO, LOG_TAG, "Almost Low Battery Event");
 			create_notification("Battery getting low, pay attention.");
-		}
-		if(battery_percent == 15) {
+		} else if(battery_percent <= 15 && !low) {
+			low = true;
 			dlog_print(DLOG_INFO, LOG_TAG, "Low Battery Event");
 			create_notification("Low Battery!");
-		}
-		if(battery_percent == 10) {
+		} else if(battery_percent <= 10 && !really_low) {
+			really_low = true;
 			dlog_print(DLOG_INFO, LOG_TAG, "Really Low Battery Event");
 			create_notification("Really Low Battery! Please, charge me.");
+		} else if(battery_percent > 20){
+			almost_low = false;
+			low = false;
+			really_low = false;
 		}
 	} else {
 		dlog_print(DLOG_INFO, LOG_TAG, "Battery info device error");
